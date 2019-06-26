@@ -1,0 +1,12 @@
+runtime: python37 #バージョン指定
+entrypoint: gunicorn -b :$PORT blogproject.wsgi:application #どこから実行するか指定
+#wsgi.pyのアプリケーション変数を仲介してアプリが走る
+
+#アクセス許可をさせる
+handlers:
+  - url: /static
+    static_dir: static/ 
+  - url: .*
+    script: auto
+
+#GAEにdjangoインストールさせるために
