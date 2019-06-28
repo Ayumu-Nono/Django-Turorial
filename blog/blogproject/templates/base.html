@@ -5,11 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ブログアプリ</title>
+    <title>精子バンク</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+<div class="wide">
+    <header>
+        <li>Home</li>
+        <li>Search</li>
+        <li>About us</li>
+        <li>My Page</li>
+        <li>Contact us</li>
+    </header>
+        
+
     {% block content %}
     {% endblock %}
+
+    <footer>
+        <div class="contents">
+        <img src="{% static 'img/footer/mail.png' %}" alt="mail_logo" class="logos">
+        <img src="{% static 'img/footer/twitter.png' %}" alt="twitter_logo" class="logos">
+        <img src="{% static 'img/footer/Facebook.png' %}" alt="facebook_logo" class="logos">
+        </div>
+    </footer>
+</div>
 </body>
 </html>

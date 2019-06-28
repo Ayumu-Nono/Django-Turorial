@@ -1,16 +1,62 @@
 h1{
-    color: red;
+    color:blue;
 }
-p{ 
-    color: blue;
+
+
+
+.wide{
+    background-color:white;
 }
 
 body{
-    color: #333;
-    font-display: 'Yu Gothic',sans-serif;
+    width: 1200px;
 }
 
-header{
-    text-align: right;
+header > li{
+    list-style: none;
+    display: inline;
+    padding: 30px;
+    background-color:lightskyblue;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.top_main{
+    background-image: url(../img/top/baby1.jpg);
+    width: 1200px;
+    height: 800px;
+    position: relative;
+}
+h2{
+    background-color: lightblue;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    width: 1200px;
+    height: 100px;
     
 }
+
+
+
+
+
+footer {
+    background-color: grey;
+}
+
+footer > .contents {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.logos{
+    margin: auto auto;
+    display: inline-block;
+    padding: 50px;
+}
+.logos {
+    width: 60px;
+    height: 60px;
+}
+
