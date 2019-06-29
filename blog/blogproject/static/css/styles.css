@@ -22,16 +22,21 @@ header > li{
     text-align: center;
     vertical-align: bottom;
 }
+a{
+    text-decoration: none;
+}
 
 h1{
     color:#37bef4;
     padding-left: 100px;
     font-size: 50px;
     margin-bottom: 0px;
-    
+
 }
 
 .top_main{
+    background-position: 0% 100%;
+    background-size: cover;
     background-image: url(../img/top/baby1.jpg);
     width: 1200px;
     height: 800px;
@@ -49,7 +54,7 @@ h2{
     font-size: 40px;
 }
 .entry_secondary {
-    width: 45%;
+    width: 35%;
     position: absolute;
     right: 10px;
     margin-top: 200px;
