@@ -23,5 +23,4 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="top.html"),name="top"),
     path('articles/',include('articles.urls')),
     path('mypage/',include('mypage.urls')),
-    path('admin/',admin.site.urls),
 ]
