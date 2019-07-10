@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class Donor(models.Model):
+    family_name = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=20)
+    blood_type = models.CharField(max_length=5)
+    birth_place = models.CharField(max_length=20)
+    memo = models.TextField(max_length=200)

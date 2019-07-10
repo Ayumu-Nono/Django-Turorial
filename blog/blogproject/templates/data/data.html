@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>
+    <h1>ドナーリスト</h1>
+    <p class="create_button"><a href="/data/donor_create/">ドナー新規登録</a></p>
+{% for donor in object_list %}
+<div>
+    <h3>{{ donor.family_name }}</h3>
+    <h3>{{ donor.first_name }}</h3>
+    <p>{{ donor.blood_type }}</p>
+    <p>{{ donor.birth_place }}</p>
+    <p>{{ donor.memo }}</p>
+</div>
+{% endfor %}
+
+
+</body>
+{% endblock %}
