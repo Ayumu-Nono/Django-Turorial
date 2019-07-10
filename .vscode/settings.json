@@ -1,4 +1,9 @@
 {
     "editor.fontWeight": "bold",
-    "editor.fontSize": 11
+    "editor.fontSize": 11,
+    "python.pythonPath": "/usr/local/var/pyenv/versions/3.6.0/bin/python",
+    "terminal.integrated.fontSize": 15,
+    "workbench.colorCustomizations": {
+        "terminal.foreground": "#00FF00",
+    }
 }

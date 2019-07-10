@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'articles.context_processors.common'
             ],
         },
     },
@@ -144,3 +145,6 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = 'mypage/login/'
 LOGIN_REDIRECT_URL = 'mypage/top/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
