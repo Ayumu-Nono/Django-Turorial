@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>    
+    <h1>検索</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+        <tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" required id="id_name" /></td></tr>
+        <input type="submit" value="検索">
+    </form>
+</body>
+{% endblock %}
