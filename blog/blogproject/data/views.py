@@ -36,10 +36,3 @@ def search(request):
     )
 
 
-
-class Donor1(generic.TemplateView):
-    template_name = 'data/donors/donor1.html'
-
-class Donor2(generic.TemplateView):
-    template_name = 'data/donors/donor2.html'
-
