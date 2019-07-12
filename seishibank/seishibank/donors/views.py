@@ -15,3 +15,4 @@ class DonorCreateView(CreateView):
     model = Donor
     form_class = DonorForms
     success_url = '/donors/'
+
