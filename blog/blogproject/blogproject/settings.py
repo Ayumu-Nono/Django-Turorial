@@ -80,8 +80,8 @@ if os.getenv('GAE_APPLICATION', None):
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'blogappdb',
             'USER': 'blogappuser',
-            'PASSWORD': '51522371Bete',
-            'HOST': '/cloudsql/blogapp-243908:asia-southeast1:blogapp',
+            # 'PASSWORD': '51522371Bete',
+            'HOST': '/cloudsql/blogapp2-246502:asia-northeast1:blogapp2',
 
         }
     }
