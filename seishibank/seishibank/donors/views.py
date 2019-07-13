@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView,CreateView
 
-from .models import Donor
-from .forms import DonorForms
+from .models import Donor,DonorSearch
+from .forms import DonorForms,SearchForm
  # Create your views here.
 
 
@@ -16,3 +16,8 @@ class DonorCreateView(CreateView):
     form_class = DonorForms
     success_url = '/donors/'
 
+
+class SearchFormView(CreateView):
+    template_name = 'data/donor_search.html'
+    model = DonorSearch
+    form_class = SearchForm

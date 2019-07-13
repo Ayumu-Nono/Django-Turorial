@@ -4,8 +4,8 @@
 {% block content %}
 <body>
     <h1>ドナーリスト</h1>
-    <p class="create_button"><a href="/data/donor_create/">ドナー新規登録</a></p>
-    <p class="create_button"><a href="/data/donor_search/">ドナー検索</a></p>
+    <p class="create_button"><a href="/donor/donor_create/">ドナー新規登録</a></p>
+    <p class="create_button"><a href="/donor/donor_search/">ドナー検索</a></p>
 {% for donor in object_list %}
 <div>
     <h3>{{ donor.family_name }}</h3>

@@ -9,5 +9,5 @@ app_name='donors'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',TemplateView.as_view(template_name='top.html'),name='top'),
-    path('donors/',include('donors.urls')),
+    path('donor/',include('donors.urls')),
 ]
