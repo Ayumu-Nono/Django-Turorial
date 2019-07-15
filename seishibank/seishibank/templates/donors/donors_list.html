@@ -7,12 +7,11 @@
     <p class="create_button"><a href="/donor/donor_create/">ドナー新規登録</a></p>
     <p class="create_button"><a href="/donor/donor_search/">ドナー検索</a></p>
 {% for donor in object_list %}
-<div>
-    <h3>{{ donor.family_name }}</h3>
-    <h3>{{ donor.first_name }}</h3>
-    <p>{{ donor.blood_type }}</p>
-    <p>{{ donor.birth_place }}</p>
-    <p>{{ donor.memo }}</p>
+<div class="donors_list">
+    <p>ID:{{ donor.family_name }}</p>
+    <p>血液型：{{ donor.blood_type }}</p>
+    <p>出身地：{{ donor.birth_place }}</p>
+    <p>メモ：{{ donor.memo }}</p>
 </div>
 {% endfor %}
 

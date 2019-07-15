@@ -14,7 +14,7 @@ class DonorCreateView(CreateView):
     template_name = 'donors/donors_create.html'
     model = Donor
     form_class = DonorForms
-    success_url = '/donors/'
+    success_url = '/donor/'
 
 
 class SearchFormView(CreateView):
