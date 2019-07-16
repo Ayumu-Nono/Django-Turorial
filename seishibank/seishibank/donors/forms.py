@@ -1,5 +1,5 @@
 from django import forms
-from .models import Donor,DonorSearch
+from .models import Donor
 
 class DonorForms(forms.ModelForm):
     class Meta:
@@ -8,7 +8,7 @@ class DonorForms(forms.ModelForm):
 
 
     
-class SearchForm(forms.ModelForm):
-    class Meta:
-        model  = DonorSearch
-        fields = ('family_name',)
+# class SearchForm(forms.ModelForm):
+#     class Meta:
+#         model  = DonorSearch
+#         fields = ('family_name',)

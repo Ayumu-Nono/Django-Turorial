@@ -11,24 +11,17 @@ EYE_COLOR = (("0","灰色"),("1","青色"),("2","青色/灰色"),("3","青色/�
 MOT = (("0","MOT5"),("1","MOT10"),("2","MOT20"),("3","MOT30"),("4","MOT40"),("5","MOT50+"))
 
 class Donor(models.Model):
-    number = models.CharField(max_length=20,verbose_name="ID",default='')
-    hair_color = models.CharField(max_length=20,verbose_name="髪の色", choices=HAIR,default='')
-    height = models.CharField(max_length=20,verbose_name="身長(cm)", choices=HEIGHT,default='')
-    weight = models.CharField(max_length=20,verbose_name="体重(kg)", choices=WEIGHT,default='')
-    ICI_IUI = models.CharField(max_length=20,verbose_name="ICI/IUI", choices=ICI_IUI,default='')
-    blood_type = models.CharField(max_length=20,verbose_name="血液型", choices=BLOOD,default='')
-    today_photo = models.CharField(max_length=20,verbose_name="現在の写真", choices=TODAY_PHOTO,default='')
-    profile = models.CharField(max_length=20,verbose_name="プロフィール", choices=PROFILE,default='')
-    eye_color = models.CharField(max_length=20,verbose_name="瞳の色", choices=EYE_COLOR,default='')
-    mot = models.CharField(max_length=20,verbose_name="運動能力", choices=MOT,default='')
+    number = models.CharField(max_length=20,verbose_name="ID",null=True)
+    hair_color = models.CharField(max_length=20,verbose_name="髪の色", choices=HAIR,null=True)
+    height = models.CharField(max_length=20,verbose_name="身長(cm)", choices=HEIGHT,null=True)
+    weight = models.CharField(max_length=20,verbose_name="体重(kg)", choices=WEIGHT,null=True)
+    ICI_IUI = models.CharField(max_length=20,verbose_name="ICI/IUI", choices=ICI_IUI,null=True)
+    blood_type = models.CharField(max_length=20,verbose_name="血液型", choices=BLOOD,null=True)
+    today_photo = models.CharField(max_length=20,verbose_name="現在の写真", choices=TODAY_PHOTO,null=True)
+    profile = models.CharField(max_length=20,verbose_name="プロフィール", choices=PROFILE,null=True)
+    eye_color = models.CharField(max_length=20,verbose_name="瞳の色", choices=EYE_COLOR,null=True)
+    mot = models.CharField(max_length=20,verbose_name="運動能力", choices=MOT,null=True)
 
 
     
-    memo = models.TextField(max_length=200)
-
-class DonorSearch(models.Model):
-    family_name = models.CharField(max_length=20)
-    first_name = models.CharField(max_length=20)
-    blood_type = models.CharField(max_length=5)
-    birth_place = models.CharField(max_length=20)
     memo = models.TextField(max_length=200)
