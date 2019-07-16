@@ -4,7 +4,7 @@ from .models import Donor,DonorSearch
 class DonorForms(forms.ModelForm):
     class Meta:
         model = Donor
-        fields = ('family_name','first_name','blood_type','birth_place','memo')
+        fields = ('blood_type','hair_color','height','memo')
 
 
     
