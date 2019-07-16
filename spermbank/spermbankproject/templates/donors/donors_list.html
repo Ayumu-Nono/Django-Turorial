@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>
+    <h1>ドナーリスト</h1>
+    <p class="create_button"><a href="/donor/donor_create/">ドナー新規登録</a></p>
+    <p class="create_button"><a href="/donor/donor_search/">ドナー検索</a></p>
+{% for donor in object_list %}
+<div class="donors_list">
+    <p>ID:{{ donor.number }}</p>
+    <p>髪の色：{{ donor.hair_color }}</p>
+    <p>身長：{{ donor.height }}</p>
+    <p>体重：{{ donor.weight }}</p>
+    <p>ICI/IUI：{{ donor.ICI_IUI }}</p>
+    <p>血液型：{{ donor.blood_type }}</p>
+    <p>現在の写真：{{ donor.today_photo }}</p>
+    <p>プロフィール：{{ donor.profile }}</p>
+    <p>瞳の色：{{ donor.eye_color }}</p>
+    <p>運動能力：{{ donor.mot }}</p>
+    <p>メモ：{{ donor.memo }}</p>
+</div>
+{% endfor %}
+
+
+</body>
+{% endblock %}
