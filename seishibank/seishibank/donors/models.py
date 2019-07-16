@@ -11,16 +11,16 @@ EYE_COLOR = (("0","灰色"),("1","青色"),("2","青色/灰色"),("3","青色/�
 MOT = (("0","MOT5"),("1","MOT10"),("2","MOT20"),("3","MOT30"),("4","MOT40"),("5","MOT50+"))
 
 class Donor(models.Model):
-    number = models.CharField(max_length=20,verbose_name="ID")
-    hair_color = models.CharField(max_length=20,verbose_name="髪の色", choices=HAIR)
-    height = models.CharField(max_length=20,verbose_name="身長(cm)", choices=HEIGHT)
-    weight = models.CharField(max_length=20,verbose_name="体重(kg)", choices=WEIGHT)
-    ICI_IUI = models.CharField(max_length=20,verbose_name="ICI/IUI", choices=ICI_IUI)
-    blood_type = models.CharField(max_length=20,verbose_name="血液型", choices=BLOOD)
-    today_photo = models.CharField(max_length=20,verbose_name="現在の写真", choices=TODAY_PHOTO)
-    profile = models.CharField(max_length=20,verbose_name="プロフィール", choices=PROFILE)
-    eye_color = models.CharField(max_length=20,verbose_name="瞳の色", choices=EYE_COLOR)
-    mot = models.CharField(max_length=20,verbose_name="運動能力", choices=MOT)
+    number = models.CharField(max_length=20,verbose_name="ID",default='')
+    hair_color = models.CharField(max_length=20,verbose_name="髪の色", choices=HAIR,default='')
+    height = models.CharField(max_length=20,verbose_name="身長(cm)", choices=HEIGHT,default='')
+    weight = models.CharField(max_length=20,verbose_name="体重(kg)", choices=WEIGHT,default='')
+    ICI_IUI = models.CharField(max_length=20,verbose_name="ICI/IUI", choices=ICI_IUI,default='')
+    blood_type = models.CharField(max_length=20,verbose_name="血液型", choices=BLOOD,default='')
+    today_photo = models.CharField(max_length=20,verbose_name="現在の写真", choices=TODAY_PHOTO,default='')
+    profile = models.CharField(max_length=20,verbose_name="プロフィール", choices=PROFILE,default='')
+    eye_color = models.CharField(max_length=20,verbose_name="瞳の色", choices=EYE_COLOR,default='')
+    mot = models.CharField(max_length=20,verbose_name="運動能力", choices=MOT,default='')
 
 
     
