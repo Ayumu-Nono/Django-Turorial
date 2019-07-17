@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView,ListView,CreateView
 from django.views import generic
 from .models import Donor,DonorSearch
-from .forms import DonorForms,DonorSreachForm
+from .forms import DonorForms,DonorSreachForm,MyForm
 
 from django.db.models import Q
 import logging
@@ -32,12 +32,11 @@ class SearchFormView(CreateView):
 class DonorSearchedView(ListView):
     template_name = 'donors/donors_searched_list.html'
     model = Donor
-    color = 2
     def color_get_query(request):
         d = {
-            'color':request.GET.get('color')
+            'color':request.GET.get('color'),
         }
-        return render(request,'donor_searched_list.html',d)
+        return render(request,'donors/donors_search.html',d)
 
     def get_queryset(self):
         color = 2

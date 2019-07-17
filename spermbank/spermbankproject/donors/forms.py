@@ -13,3 +13,6 @@ class DonorSreachForm(forms.ModelForm):
     class Meta:
         model = DonorSearch
         fields = ('color_filter',)
+
+class MyForm(forms.Form):
+    text = forms.CharField(max_length=20)
