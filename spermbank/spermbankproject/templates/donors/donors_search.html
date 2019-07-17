@@ -4,7 +4,26 @@
 {% block content %}
 <body>    
     <h1>ドナー検索画面</h1>
-    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="create_button" type="submit" value="検索">
     </form>
+
+{% for donor in donor_list %}
+<div class="donors_list">
+    <p>ID:{{ donor.number }}</p>
+    <p>髪の色：{{ donor.hair_color }}</p>
+    <p>身長：{{ donor.height }}</p>
+    <p>体重：{{ donor.weight }}</p>
+    <p>ICI/IUI：{{ donor.ICI_IUI }}</p>
+    <p>血液型：{{ donor.blood_type }}</p>
+    <p>現在の写真：{{ donor.today_photo }}</p>
+    <p>プロフィール：{{ donor.profile }}</p>
+    <p>瞳の色：{{ donor.eye_color }}</p>
+    <p>運動能力：{{ donor.mot }}</p>
+    <p>メモ：{{ donor.memo }}</p>
+</div>
+{% endfor %}
 </body>
 {% endblock %}
