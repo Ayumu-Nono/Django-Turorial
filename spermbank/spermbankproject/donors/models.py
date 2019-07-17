@@ -23,3 +23,5 @@ class Donor(models.Model):
     mot = models.CharField(max_length=20,verbose_name="運動能力", choices=MOT,null=True)
     memo = models.TextField(max_length=200)
 
+class DonorSearch(models.Model):
+    color_filter = models.CharField(max_length=20,verbose_name="髪の色", choices=HAIR,null=True)

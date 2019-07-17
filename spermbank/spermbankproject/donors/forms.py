@@ -1,5 +1,5 @@
 from django import forms
-from .models import Donor
+from .models import Donor,DonorSearch
 from .models import HAIR
 from .models import HEIGHT
 
@@ -11,5 +11,5 @@ class DonorForms(forms.ModelForm):
 
 class DonorSreachForm(forms.ModelForm):
     class Meta:
-        model = Donor
-        fields = ('hair_color','height')
+        model = DonorSearch
+        fields = ('color_filter',)
