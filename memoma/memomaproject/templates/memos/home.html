@@ -5,6 +5,9 @@
 <body>
     <div class="home">
         <h1>ホーム</h1>
+        {% for Memos in object_list %}
+        <li>{{ Memos.title }}</li> 
+        {% endfor %}
     </div>
     
 </body>

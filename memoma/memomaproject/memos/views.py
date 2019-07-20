@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,CreateView
+from django.views.generic import TemplateView,CreateView,ListView
 from .models import Memos
 from .forms import MemosForm
 # Create your views here.
 
-class MemosHomeView(TemplateView):
+class MemosHomeView(ListView):
     template_name = 'memos/home.html'
+    model = Memos
+    context_object_name = 'memo'
+
 
 
 class MemoCreateView(CreateView):
