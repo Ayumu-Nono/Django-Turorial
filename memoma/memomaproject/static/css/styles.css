@@ -6,19 +6,7 @@ h1{
     background-color: #5CB0B8;
     color: white;
 }
-.create_tab{
-    display: inline-block;
-  text-decoration: none;
-  background: orange;
-  color: #FFF;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  transition: .4s;
-}
+
 
 .forms{
     color: black;
@@ -27,4 +15,20 @@ h1{
 }
 .form{
     width: 100px;
+}
+.footer_icons{
+    font-size: 50px;
+}
+.fa-plus{
+    font-size: 30px;
+    color: orange;
+}
+
+.home > ul{
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+    font-weight: bold;
 }
