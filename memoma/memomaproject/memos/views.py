@@ -16,3 +16,10 @@ class MemoCreateView(CreateView):
     model = Memos
     form_class = MemosForm
     success_url = '/memos/'
+
+
+class MemoSearchView(TemplateView):
+    template_name = 'memos/search.html'
+
+class MyPageView(TemplateView):
+    template_name = 'memos/mypage.html'
