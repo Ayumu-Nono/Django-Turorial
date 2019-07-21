@@ -9,6 +9,8 @@ class MemosHomeView(ListView):
     model = Memos
     context_object_name = 'memo'
 
+    def get_queryset(self):
+        return Memos.objects.filter(title='大学院入試')
 
 
 class MemoCreateView(CreateView):
