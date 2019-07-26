@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <body>    
+    <h1>ドナー検索画面</h1>
+    <form action="" method="get">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="create_button" type="submit" value="検索">
+    </form>
+    <a href="donor_searched/">検索結果</a>
+</body> -->
+
+<body>    
+    <h1>ドナー検索画面</h1>
+    <form action="" method="get">
+        <label>髪の色：<input type="text" size="20" name="color"></label>
+        <input class="create_button" type="submit" value="検索">
+    </form>
+    <a href="donor_searched/">検索結果</a>
+    {% if color %}
+        {{ color }}さん、こんにちは。
+    {% endif %}
+</body>
+{% endblock %}
