@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="home">
+        <h1>ホーム</h1>
+        {% for Memos in object_list %}
+        <ul>{{ Memos.title }}</ul> 
+        {% endfor %}
+    </div>
+    
+</body>
+
+{% endblock %}

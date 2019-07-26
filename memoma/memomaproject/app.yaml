@@ -1,0 +1,6 @@
+runtime: python37
+entrypoint: gunicorn -b :$PORT memomaproject.wsgi:application
+
+handlers:
+  - url: .*
+    script: auto

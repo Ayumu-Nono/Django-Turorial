@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="create">
+        <h1>メモ作成</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="forms">
+                {% for field in form %}
+                <ul>
+                <label class="from" for="{{ field.id_for_label }}">{{ field.label }}:</label><br>{{ field }}
+                </ul>
+                {% endfor %}
+            </div>
+            <input class="submit_button" type="submit" value="作成">
+        </form>
+        
+    </div>
+</body>
+
+{% endblock %}
