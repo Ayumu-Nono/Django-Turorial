@@ -32,12 +32,20 @@ class SearchFormView(CreateView):
 class DonorSearchedView(ListView):
     template_name = 'donors/donors_searched_list.html'
     model = Donor
-    def color_get_query(request):
-        d = {
-            'color':request.GET.get('color'),
-        }
-        return render(request,'donors/donors_search.html',d)
+   
+    def get_context_data(self,**kwargs):
+       context = super(DonorSearchedView,self).get_context_data(**kwargs)
+       donors = self.model.objects.all()
+       context['donors'] = donors
+
+       return context
+ 
 
     def get_queryset(self):
+        object_list = self.model.objects.all()
+        q_color = self.request.GET.get('color')
         color = 2
-        return Donor.objects.filter(hair_color = 2)
+        object_list = object_list.filter(hair_color = q_color)
+
+        return object_list
+        

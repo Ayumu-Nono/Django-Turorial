@@ -54,6 +54,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'spermbankproject.templates.context_processors.common',#変数宣言
             ],
+            'libraries':{
+                'custom_filters': 'donors.templatetags.custom_filters',
+            }
         },
     },
 ]

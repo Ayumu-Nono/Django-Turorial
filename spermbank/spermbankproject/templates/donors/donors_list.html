@@ -9,15 +9,15 @@
 {% for donor in object_list %}
 <div class="donors_list">
     <p>ID:{{ donor.number }}</p>
-    <p>髪の色：{{ donor.hair_color }}</p>
-    <p>身長：{{ donor.height }}</p>
-    <p>体重：{{ donor.weight }}</p>
-    <p>ICI/IUI：{{ donor.ICI_IUI }}</p>
-    <p>血液型：{{ donor.blood_type }}</p>
-    <p>現在の写真：{{ donor.today_photo }}</p>
-    <p>プロフィール：{{ donor.profile }}</p>
-    <p>瞳の色：{{ donor.eye_color }}</p>
-    <p>運動能力：{{ donor.mot }}</p>
+    <p>髪の色：{{ donor.get_hair_color_display }}</p>
+    <p>身長：{{ donor.get_height_display }}</p>
+    <p>体重：{{ donor.get_weight_display }}</p>
+    <p>ICI/IUI：{{ donor.get_ICI_IUI_display }}</p>
+    <p>血液型：{{ donor.get_blood_type_display }}</p>
+    <p>現在の写真：{{ donor.get_today_photo_display }}</p>
+    <p>プロフィール：{{ donor.get_profile_display }}</p>
+    <p>瞳の色：{{ donor.get_eye_color_display }}</p>
+    <p>運動能力：{{ donor.get_mot_display }}</p>
     <p>メモ：{{ donor.memo }}</p>
 </div>
 {% endfor %}
