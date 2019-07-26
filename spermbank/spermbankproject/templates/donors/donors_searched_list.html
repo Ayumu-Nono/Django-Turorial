@@ -4,29 +4,97 @@
 
 {% block content %}
 <body>
+    <h1>ドナー検索リスト</h1>
+    <p>検索条件にヒットするドナーが表示されます</p>
+
+    {% for donor in object_list %}
+    <div class="donors_list">
+        <p>ID:{{ donor.number }}</p>
+        <p>髪の色：{{ donor.get_hair_color_display }}</p>
+        <p>身長：{{ donor.get_height_display }}</p>
+        <p>体重：{{ donor.get_weight_display }}</p>
+        <p>ICI/IUI：{{ donor.get_ICI_IUI_display }}</p>
+        <p>血液型：{{ donor.get_blood_type_display }}</p>
+        <p>現在の写真：{{ donor.get_today_photo_display }}</p>
+        <p>プロフィール：{{ donor.get_profile_display }}</p>
+        <p>瞳の色：{{ donor.get_eye_color_display }}</p>
+        <p>運動能力：{{ donor.get_mot_display }}</p>
+        <p>メモ：{{ donor.memo }}</p>
+    </div>
+    {% endfor %}
     <h1>ドナー検索</h1>
     <form action="" method="get" name="filter_form">
-        <input type="search" id="filter_color" name="color" value={{ request.GET|color }}>
-        <button id="filter">絞り込み</button>
+        <br><p>髪の色：</p>
+        <input type="radio" id="filter_color" name="color" value=0>ダークブラウン
+        <input type="radio" id="filter_color" name="color" value=1>ダークブロンド
+        <input type="radio" id="filter_color" name="color" value=2>ブラウン
+        <input type="radio" id="filter_color" name="color" value=3>ブロンド
+        <input type="radio" id="filter_color" name="color" value=4>黒色
+        <input type="radio" id="filter_color" name="color" value=5>赤色
+        <input type="radio" id="filter_color" name="color" value=6>白色
+        <br>
+        <!-- <br><p>身長：</p>
+        <input type="radio" id="filter_height" name="height" value=0>-159
+        <input type="radio" id="filter_height" name="height" value=1>160-169
+        <input type="radio" id="filter_height" name="height" value=2>170-179
+        <input type="radio" id="filter_height" name="height" value=3>180-189
+        <input type="radio" id="filter_height" name="height" value=4>190-
+        <br>
+        <br><p>体重：</p>
+        <input type="radio" id="filter_weight" name="weight" value=0>-50
+        <input type="radio" id="filter_weight" name="weight" value=1>50-59
+        <input type="radio" id="filter_weight" name="weight" value=2>60-69
+        <input type="radio" id="filter_weight" name="weight" value=3>70-79
+        <input type="radio" id="filter_weight" name="weight" value=4>80-89
+        <input type="radio" id="filter_weight" name="weight" value=5>90-
+        <br>
+        <br><p>ICI/IUI：</p>
+        <input type="radio" id="filter_ICI_IUI" name="ICI_IUI" value=0>未洗浄
+        <input type="radio" id="filter_ICI_IUI" name="ICI_IUI" value=1>洗浄済み
+        <br>
+        <br><p>血液型：</p>
+        <input type="radio" id="filter_blood_type" name="blood_type" value=0>A-
+        <input type="radio" id="filter_blood_type" name="blood_type" value=1>A+
+        <input type="radio" id="filter_blood_type" name="blood_type" value=2>AB+
+        <input type="radio" id="filter_blood_type" name="blood_type" value=3>AB-
+        <input type="radio" id="filter_blood_type" name="blood_type" value=4>B-
+        <input type="radio" id="filter_blood_type" name="blood_type" value=5>B+
+        <input type="radio" id="filter_blood_type" name="blood_type" value=6>O-
+        <input type="radio" id="filter_blood_type" name="blood_type" value=7>O+
+        <br>
+        <br><p>現在の写真：</p>
+        <input type="radio" id="filter_today_photo" name="today_photo" value=0>はい
+        <input type="radio" id="filter_today_photo" name="today_photo" value=1>いいえ
+        <br>
+        <br><p>プロフィール：</p>
+        <input type="radio" id="filter_profile" name="profile" value=0>ドナー独占権
+        <input type="radio" id="filter_profile" name="profile" value=1>基本
+        <input type="radio" id="filter_profile" name="profile" value=2>詳細
+        <br>
+        <br><p>瞳の色：</p>
+        <input type="radio" id="filter_eye_color" name="eye_color" value=0>灰色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=1>青色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=2>青色/灰色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=3>青色/緑色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=4>茶色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=5>茶色/灰色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=6>茶色/緑色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=7>緑色
+        <input type="radio" id="filter_eye_color" name="eye_color" value=8>緑色/灰色
+        <br> -->
+        <br><p>運動能力：</p>
+        <input type="radio" id="filter_mot" name="mot" value=0>MOT5
+        <input type="radio" id="filter_mot" name="mot" value=1>MOT10
+        <input type="radio" id="filter_mot" name="mot" value=2>MOT20
+        <input type="radio" id="filter_mot" name="mot" value=3>MOT30
+        <input type="radio" id="filter_mot" name="mot" value=4>MOT40
+        <input type="radio" id="filter_mot" name="mot" value=5>MOT50+
+        <br>
+        
+        <button class="create_button" id="filter">絞り込み</button>
     </form>
-    <h1>ドナー検索リスト</h1>
-    <!-- <p class="create_button"><a href="/donor/donor_create/">ドナー新規登録</a></p> -->
-    <p class="create_button"><a href="/donor/donor_search/">ドナー検索</a></p>
-{% for donor in object_list %}
-<div class="donors_list">
-    <p>ID:{{ donor.number }}</p>
-    <p>髪の色：{{ donor.get_hair_color_display }}</p>
-    <p>身長：{{ donor.get_height_display }}</p>
-    <p>体重：{{ donor.get_weight_display }}</p>
-    <p>ICI/IUI：{{ donor.get_ICI_IUI_display }}</p>
-    <p>血液型：{{ donor.get_blood_type_display }}</p>
-    <p>現在の写真：{{ donor.get_today_photo_display }}</p>
-    <p>プロフィール：{{ donor.get_profile_display }}</p>
-    <p>瞳の色：{{ donor.get_eye_color_display }}</p>
-    <p>運動能力：{{ donor.get_mot_display }}</p>
-    <p>メモ：{{ donor.memo }}</p>
-</div>
-{% endfor %}
+
+    
 
 
 </body>

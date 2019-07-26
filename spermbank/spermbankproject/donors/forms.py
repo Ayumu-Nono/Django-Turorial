@@ -11,8 +11,6 @@ class DonorForms(forms.ModelForm):
 
 class DonorSreachForm(forms.ModelForm):
     class Meta:
-        model = DonorSearch
-        fields = ('color_filter',)
-
-class MyForm(forms.Form):
-    text = forms.CharField(max_length=20)
+        model = Donor
+        # fields = ('number','hair_color','height','weight','ICI_IUI','blood_type','today_photo','profile','eye_color','mot')
+        fields =('hair_color',)
