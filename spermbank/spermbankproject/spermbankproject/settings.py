@@ -71,10 +71,10 @@ if os.getenv('GAE_APPLICATION',None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'spermbankbankdb',
-            'USER':'spermbankbankuser',
+            'NAME': 'spermbankdb',
+            'USER':'spermbankuser',
             'PASSWORD':'51522371Bete',
-            'HOST':'/cloudsql/spermbankbank:asia-northeast1:spermbank',
+            'HOST':'/cloudsql/spermbank:asia-northeast1:spermbank',
         }
     }
 
