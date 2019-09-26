@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>宇宙"歩"行士の思考軌跡</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- フォントオーサムを使う -->
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/favicon.gif' %}">
+</head>
+<body>
+    <ul>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>    
+        <li><a href="/articles/"><i class="fas fa-book"></i>Diary</a></li>
+        <li><a href="/about/"><i class="fas fa-address-card"></i>About</a></li>
+        <li><p><i class="fas fa-rocket"></i>宇宙”歩”行士の思考軌跡</p></li>
+    </ul>            
+    {% block content %}
+    {% endblock %}
+</body>
+<footer>
+
+    <p>Copyright(c) 宇宙"歩"行士の思考軌跡 All Rights Reserved.</p>
+    <a href="/admin/">ログイン</a>
+</footer>
+</html>

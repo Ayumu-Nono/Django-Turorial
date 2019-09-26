@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+<body>
+    <div class="title_img">
+        <div class="top_title">My Way of Thinking to Be ASTROWALKER</div>
+        <img src="static/img/sunrise-1756274_1920.jpg" alt="">        
+    </div>
+<div class="right_bar">
+<div class="profile">
+    <h1>プロフィール</h1>
+    <p>名前：歩<br>
+        サイトの中身：思考メモ<br>
+        興味：物理、教育、スポーツ<br>
+        休日：だいたいPCで色々してる<br>
+        </p>
+        <a href="about/">もっと読む</a>
+</div>            
+</div>
+
+<div class="left_bar">
+<div class="recent_entries">
+    <h1>記事</h1>
+    <a href="/articles/">記事を読む</a>
+</div>                
+</div>
+            
+<div class="contents">
+    <h1>お知らせ・最新情報</h1>
+    <li>2019/9/20 ベータ版作成</li>
+</div>
+</body>
+
+{% endblock %}
