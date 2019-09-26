@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="contents">
+<h1>全ての記事</h1>
+{% for dt in date_list %}
+    <h2>{{ dt.year }}年</h2>
+{% endfor %}
+
+{% for post in latest %}
+  <p><a href="{% url 'articles:article' post.pk %}">{{ post.date |date:"Y-m-j" }} {{ post.title }}</a></p>
+{% endfor %}
+
+<a href="/articles/">
+    <div>記事一覧に戻る</div></a>
+</div>
+{% endblock %}

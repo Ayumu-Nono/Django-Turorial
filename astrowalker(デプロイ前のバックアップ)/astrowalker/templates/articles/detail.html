@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body>
+
+
+<div class="contents">
+    <div class="article_list">
+        <div class="post_img"><img src="{{ article.photo.url }}" alt=""></div>
+        <div class="post_title">{{ article.title }}</div>
+        <div class="post_tags">カテゴリ：<strong class="post_tag">{{ article.get_tags_display }}</strong></div>
+        <div class="post_date">{{ article.date |date:"Y-m-j H:i:s"}}</div>
+        <div class="post_summary">{{ article.summary }}</div>
+        <div class="post_text">{{ article.text | linebreaksbr }}</div>
+        
+    </div>
+    <div class="referer_button">
+    <a href="{{request.META.HTTP_REFERER}}">戻る</a>
+    </div>
+</div>
+</body>
+
+{% endblock %}
