@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<body>
+<div class="left_bar">
+<!-- <div class="recent_entries">
+    <h1>直近記事</h1>
+</div>                 -->
+<div class="archive">
+    <h1>アーカイブ</h1>
+    <a href="archive/">アーカイブ一覧へ</a>
+
+</div>            
+</div>
+
+<div class="right_bar">
+<div class="tags">
+    <h1>タグ検索</h1>
+    <form action="" method="get" name="filter_form">
+        
+        <br><input type="radio" id="filter_tag" name="tags" value="0">内容がない
+        <br><input type="radio" id="filter_tag" name="tags" value="1">科学
+        <br><input type="radio" id="filter_tag" name="tags" value="2">思考
+        <br><input type="radio" id="filter_tag" name="tags" value="3">プログラミング
+        <br><input type="radio" id="filter_tag" name="tags" value="4">出来事
+        
+        <br>
+        <button class="filter_button">絞り込み</button>
+        <a href="/articles/">全件記事表示に戻る</a>
+    </form>
+    
+</div>            
+</div>
+
+<div class="contents">
+    <h1>記事</h1>
+    {% for post in object_list %}
+    <div class="article_list_detail">
+        <div class="post_title_detail"><a href="{% url 'articles:article' post.pk %}">{{ post.title }}</a></div>
+        <div class="post_date_detail">{{ post.date |date:"Y-m-j H:i:s"}}</div>
+        <div class="post_img_detail"><img src="{{ post.sumnail.url }}" alt=""></div>
+        <div class="post_tags_detail">カテゴリ：<strong class="post_tag">{{ post.get_tags_display }}</strong></div>
+        
+        <div class="post_summary_detail">{{ post.summary }}</div>
+        <!-- <div class="post_text">{{ post.text | linebreaksbr }}</div> -->
+    </div>
+    {% endfor %}
+    {% include "pagination.html" %}
+</div>
+</body>
+
+{% endblock %}
